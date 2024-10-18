@@ -6,5 +6,5 @@ PowerShellウィンドウ表示のサンプル
 - file_dialog.ps1  
 PowerShellファイル選択ダイアログとフォルダ選択ダイアログのサンプル  
   
-- request.ps1  
+- post_request.ps1  
 PowerShellのGET/POSTリクエストのサンプル  
