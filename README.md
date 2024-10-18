@@ -1,10 +1,10 @@
 # ファイル説明
 
 - create_window.ps1  
-PowerShellウィンドウ表示のサンプル  
+ウィンドウ表示のサンプル  
   
 - file_dialog.ps1  
-PowerShellファイル選択ダイアログとフォルダ選択ダイアログのサンプル  
+ファイル選択/フォルダ選択ダイアログのサンプル  
   
 - post_request.ps1  
-PowerShellのGET/POSTリクエストのサンプル  
+GET/POSTリクエストのサンプル  
