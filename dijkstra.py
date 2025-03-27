@@ -1,5 +1,6 @@
 INF = 999
 
+loop = 0
 
 names = ["S", "A", "B", "C", "G"]
 
@@ -12,10 +13,10 @@ dists = {
 }
 
 edges = {
-    "S" : {"A" : 1, "B" : 2, "C" : 3},
-    "A" : {"G" : 9},
+    "S" : {"A" : 1, "B" : 2, "C" : 8},
+    "A" : {"B" : 7, "C" : 4, "G" : 9},
     "B" : {"G" : 6},
-    "C" : {"G" : 7},
+    "C" : {"G" : 3},
     "G" : {},
 }
 
@@ -36,12 +37,13 @@ while True:
         d = dists[names[i]]
         if d < min_dist and not checked[names[i]]:
             cur_node = i
-            min_dist = d
+            min_dist = d    # 距離が出ているノードの中で最小のものを選択
 
     checked[names[cur_node]] = True
-    print(f"checked[{names[cur_node]}] = True")
-    print(f"mindist = {min_dist}")
+    print(f"【{names[cur_node]}】")
+    print(f"min_dist = {min_dist}")
 
+    # ゴールノードに到達したら終了
     if names[cur_node] == "G":
         print("--- GOAL ---")
         print(f"各ノード最短距離:{dists}")
@@ -49,14 +51,15 @@ while True:
         break
 
     # 選択したノードの隣接ノードを取得
-    for key in edges[names[cur_node]]:
-        # 隣接ノードのコストを計算
-        new_dist = min_dist + edges[names[cur_node]][key]
+    for dest in edges[names[cur_node]]:
+        # 隣接ノードのコストを計算 
+        # = 選択したノードの最短コスト + 選択したノードから隣接ノードの辺のコスト
+        new_dist = min_dist + edges[names[cur_node]][dest]
 
         # 隣接ノードのコストが現在のコストよりも小さければ更新
-        if new_dist < dists[key]:
-            dists[key] = new_dist
-            print(f"total_dist[{key}] = {new_dist}")
+        if new_dist < dists[dest]:
+            dists[dest] = new_dist
+            print(f"dist[{dest}] = {new_dist}")
     
     print("***")
 
