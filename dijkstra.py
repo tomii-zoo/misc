@@ -1,7 +1,4 @@
 INF = 999
-
-loop = 0
-
 names = ["S", "A", "B", "C", "G"]
 
 dists = {
@@ -28,6 +25,7 @@ checked = {
     "G": False
 }
 
+print(edges)
 print("--- BEGIN ---")
 
 while True:
