@@ -27,8 +27,10 @@ checked = {
     "G": False
 }
 
+print("--- BEGIN ---")
+
 while True:
-    # 距離が最も近い未チェックのノードを選択する
+    # 最も距離が近いノードを選択する
     min_dist = INF
     for i in range(len(names)):
         d = dists[names[i]]
@@ -36,24 +38,25 @@ while True:
             cur_node = i
             min_dist = d
 
-    print(f"調査対象のノード：{names[cur_node]}")
-    print(f"{names[cur_node]}までの移動コスト：{min_dist}")
     checked[names[cur_node]] = True
+    print(f"checked[{names[cur_node]}] = True")
+    print(f"mindist = {min_dist}")
 
     if names[cur_node] == "G":
-        print("")
-        print("*** ゴールに到達しました ***")
+        print("--- GOAL ---")
         print(f"各ノード最短距離:{dists}")
+        print("")
         break
 
     # 選択したノードの隣接ノードを取得
     for key in edges[names[cur_node]]:
-        # 隣接ノードのコストを計算 
+        # 隣接ノードのコストを計算
         new_dist = min_dist + edges[names[cur_node]][key]
 
         # 隣接ノードのコストが現在のコストよりも小さければ更新
         if new_dist < dists[key]:
             dists[key] = new_dist
-            print(f"{key} までのコストを更新しました：{new_dist}")
-    # break
+            print(f"total_dist[{key}] = {new_dist}")
+    
+    print("***")
 
