@@ -8,10 +8,9 @@ def fib(n):
     if n == 1:
         return 1
     
-    if n in memo:
-        return memo[n]
-    else:
+    if not n in memo:
         memo[n] = fib(n - 1) + fib(n - 2)
-        return memo[n]
+    
+    return memo[n]
 
-print(fib(900))
+print(fib(990))
