@@ -2,14 +2,11 @@ from machine import Pin, SPI
 import st7789
 import time
 
-V33_PIN = 10
 RESET_PIN = 11
 DC_PIN = 12
 CS_PIN = 13
 CLK_PIN = 14
 DIN_PIN = 15 # lower left corner
-
-Pin(V33_PIN, Pin.OUT)
 
 spi = SPI(1, baudrate=31250000, sck=Pin(CLK_PIN), mosi=Pin(DIN_PIN))
 tft = st7789.ST7789(spi, 240, 240,
