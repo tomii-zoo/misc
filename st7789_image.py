@@ -6,7 +6,7 @@ RESET_PIN = 11 # 11 = SPI TX = XIAO D6
 DC_PIN = 12    # 12 = SPI RX = XIAO D9? free?
 CS_PIN = 13    # 13 = SPI CSn = XIAO D7
 CLK_PIN = 14   # 14 = SPI SCK = XIAO D8
-DIN_PIN = 15   # 15 = SPI TX = MOSI? => XIAO D10?
+DIN_PIN = 15   # 15 = SPI TX/SDA = MOSI? => XIAO D10?
 # lower left corner
 # backlight unuse
 
