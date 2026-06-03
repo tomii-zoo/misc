@@ -3,7 +3,7 @@
 #include <tuple>
 #include <unistd.h>
 
-const double PI = 3.1415;
+const double PI = 3.14159265358979323846264338327950288f;
 const double ToRad = PI / 180;
 const double ToDeg = 1 / ToRad;
 
